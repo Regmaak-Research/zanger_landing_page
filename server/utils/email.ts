@@ -4,9 +4,13 @@ if (!process.env.SENDGRID_API_KEY) {
   throw new Error("SENDGRID_API_KEY environment variable must be set");
 }
 
+if (!process.env.SENDGRID_VERIFIED_SENDER) {
+  throw new Error("SENDGRID_VERIFIED_SENDER environment variable must be set");
+}
+
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-const VERIFIED_SENDER = 'support@zangerai.com'; // Use your verified sender email
+const VERIFIED_SENDER = process.env.SENDGRID_VERIFIED_SENDER;
 
 interface ContactFormData {
   name: string;
@@ -38,10 +42,15 @@ export async function sendContactFormNotification(data: ContactFormData) {
 
   try {
     await sgMail.send(msg);
+    console.log('Contact form email sent successfully');
     return true;
   } catch (error) {
-    console.error('SendGrid email error:', error);
-    throw error; // Propagate the error for better debugging
+    console.error('SendGrid email error:', {
+      error,
+      data: { ...msg, to: '[REDACTED]' },
+      errorMessage: error instanceof Error ? error.message : 'Unknown error',
+    });
+    throw new Error('Failed to send contact form email. Please try again.');
   }
 }
 
@@ -61,10 +70,15 @@ export async function sendNewsletterSubscriptionNotification(data: NewsletterDat
 
   try {
     await sgMail.send(msg);
+    console.log('Newsletter subscription email sent successfully');
     return true;
   } catch (error) {
-    console.error('SendGrid email error:', error);
-    throw error; // Propagate the error for better debugging
+    console.error('SendGrid email error:', {
+      error,
+      data: { ...msg, to: '[REDACTED]' },
+      errorMessage: error instanceof Error ? error.message : 'Unknown error',
+    });
+    throw new Error('Failed to send newsletter subscription email. Please try again.');
   }
 }
 
@@ -92,9 +106,14 @@ export async function sendBetaApplicationNotification(data: BetaApplicationData)
 
   try {
     await sgMail.send(msg);
+    console.log('Beta application email sent successfully');
     return true;
   } catch (error) {
-    console.error('SendGrid email error:', error);
-    throw error;
+    console.error('SendGrid email error:', {
+      error,
+      data: { ...msg, to: '[REDACTED]' },
+      errorMessage: error instanceof Error ? error.message : 'Unknown error',
+    });
+    throw new Error('Failed to send beta application email. Please try again.');
   }
 }

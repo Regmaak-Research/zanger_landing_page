@@ -2,7 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { z } from "zod";
-import { sendContactFormNotification, sendNewsletterSubscriptionNotification } from "./utils/email";
+import { sendContactFormNotification, sendNewsletterSubscriptionNotification, sendBetaApplicationNotification } from "./utils/email";
 
 const contactSchema = z.object({
   name: z.string().min(2),
@@ -33,12 +33,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/contact", async (req, res) => {
     try {
       const data = contactSchema.parse(req.body);
-      const emailSent = await sendContactFormNotification(data);
-
-      if (!emailSent) {
-        throw new Error("Failed to send contact form notification");
-      }
-
+      await sendContactFormNotification(data);
       res.json({ success: true });
     } catch (error) {
       console.error("Contact form error:", error);
@@ -51,12 +46,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/newsletter", async (req, res) => {
     try {
       const data = newsletterSchema.parse(req.body);
-      const emailSent = await sendNewsletterSubscriptionNotification(data);
-
-      if (!emailSent) {
-        throw new Error("Failed to send newsletter subscription notification");
-      }
-
+      await sendNewsletterSubscriptionNotification(data);
       res.json({ success: true });
     } catch (error) {
       console.error("Newsletter subscription error:", error);
@@ -69,14 +59,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/beta-application", async (req, res) => {
     try {
       const data = betaApplicationSchema.parse(req.body);
-
-      // Send email notification
-      const emailSent = await sendBetaApplicationNotification(data);
-
-      if (!emailSent) {
-        throw new Error("Failed to send email notification");
-      }
-
+      await sendBetaApplicationNotification(data);
       res.json({ success: true });
     } catch (error) {
       console.error("Beta application error:", error);
