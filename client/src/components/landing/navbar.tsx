@@ -14,20 +14,23 @@ export default function Navbar() {
       return;
     }
 
-    const element = document.getElementById(id);
-    if (element) {
-      const navbarHeight = 64; // Height of the navbar
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+    // Wait for next tick to ensure DOM is ready
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        const navbarHeight = 64; // Height of the navbar
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - navbarHeight;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-      setIsMobileMenuOpen(false);
-    } else {
-      console.warn(`Section with id "${id}" not found`);
-    }
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+        setIsMobileMenuOpen(false);
+      } else {
+        console.warn(`Section with id "${id}" not found`);
+      }
+    }, 0);
   };
 
   // Close mobile menu when changing location
