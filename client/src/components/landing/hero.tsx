@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Hero() {
@@ -27,14 +26,9 @@ export default function Hero() {
                 Your all-in-one AI legal platform that saves 70% of time on document preparation and case management.
               </p>
             </div>
-            <div className="flex flex-wrap gap-4">
-              <Link href="/trial">
-                <Button size="lg" className="gap-2">
-                  Join Beta Program <ChevronRight className="h-4 w-4" />
-                </Button>
-              </Link>
+            <div>
               <Link href="/demo">
-                <Button size="lg" variant="outline">
+                <Button size="lg" className="gap-2">
                   Schedule Demo
                 </Button>
               </Link>
