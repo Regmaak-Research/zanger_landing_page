@@ -62,8 +62,8 @@ export default function Navbar() {
                 <Button variant="link" onClick={() => scrollToSection('features')}>
                   Features
                 </Button>
-                <Button variant="link" onClick={() => scrollToSection('solutions')}>
-                  Solutions
+                <Button variant="link" onClick={() => scrollToSection('consultation')}>
+                  Consultation
                 </Button>
                 <Button variant="link" onClick={() => scrollToSection('faq')}>
                   FAQ
@@ -86,8 +86,8 @@ export default function Navbar() {
                 <Button variant="ghost" className="w-full justify-start" onClick={() => scrollToSection('features')}>
                   Features
                 </Button>
-                <Button variant="ghost" className="w-full justify-start" onClick={() => scrollToSection('solutions')}>
-                  Solutions
+                <Button variant="ghost" className="w-full justify-start" onClick={() => scrollToSection('consultation')}>
+                  Consultation
                 </Button>
                 <Button variant="ghost" className="w-full justify-start" onClick={() => scrollToSection('faq')}>
                   FAQ
