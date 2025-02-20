@@ -6,6 +6,14 @@ import { useState } from "react";
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMobileMenuOpen(false);
+    }
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b">
       <div className="container mx-auto px-4">
@@ -13,9 +21,9 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <img
-              src="/Untitled design (8).png"
+              src="/attached_assets/zanne-removebg-preview.png"
               alt="Zanger Logo"
-              className="h-8 w-auto"
+              className="h-12 w-auto"
             />
           </Link>
 
@@ -32,18 +40,18 @@ export default function Navbar() {
 
           {/* Desktop navigation */}
           <div className="hidden lg:flex lg:items-center lg:gap-6">
-            <Link href="#features">
-              <Button variant="link">Features</Button>
-            </Link>
-            <Link href="#testimonials">
-              <Button variant="link">Testimonials</Button>
-            </Link>
-            <Link href="#pricing">
-              <Button variant="link">Pricing</Button>
-            </Link>
-            <Link href="#faq">
-              <Button variant="link">FAQ</Button>
-            </Link>
+            <Button variant="link" onClick={() => scrollToSection('features')}>
+              Features
+            </Button>
+            <Button variant="link" onClick={() => scrollToSection('testimonials')}>
+              Testimonials
+            </Button>
+            <Button variant="link" onClick={() => scrollToSection('pricing')}>
+              Pricing
+            </Button>
+            <Button variant="link" onClick={() => scrollToSection('faq')}>
+              FAQ
+            </Button>
 
             {/* CTA Buttons */}
             <Button asChild variant="ghost" size="sm">
@@ -58,18 +66,18 @@ export default function Navbar() {
         {/* Mobile menu */}
         {isMobileMenuOpen && (
           <div className="lg:hidden py-4 space-y-2">
-            <Link href="#features">
-              <Button variant="ghost" className="w-full justify-start">Features</Button>
-            </Link>
-            <Link href="#testimonials">
-              <Button variant="ghost" className="w-full justify-start">Testimonials</Button>
-            </Link>
-            <Link href="#pricing">
-              <Button variant="ghost" className="w-full justify-start">Pricing</Button>
-            </Link>
-            <Link href="#faq">
-              <Button variant="ghost" className="w-full justify-start">FAQ</Button>
-            </Link>
+            <Button variant="ghost" className="w-full justify-start" onClick={() => scrollToSection('features')}>
+              Features
+            </Button>
+            <Button variant="ghost" className="w-full justify-start" onClick={() => scrollToSection('testimonials')}>
+              Testimonials
+            </Button>
+            <Button variant="ghost" className="w-full justify-start" onClick={() => scrollToSection('pricing')}>
+              Pricing
+            </Button>
+            <Button variant="ghost" className="w-full justify-start" onClick={() => scrollToSection('faq')}>
+              FAQ
+            </Button>
             <div className="pt-2 space-y-2">
               <Button asChild variant="ghost" className="w-full justify-start">
                 <Link href="/demo">Schedule Demo</Link>

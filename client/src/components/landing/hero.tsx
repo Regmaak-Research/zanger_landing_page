@@ -13,11 +13,6 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             className="space-y-8 md:space-y-10"
           >
-            <img
-              src="/Untitled design (8).png"
-              alt="Zanger Logo"
-              className="h-20 sm:h-28 md:h-40 w-auto mx-auto lg:mx-0"
-            />
             <div className="space-y-4 md:space-y-6 text-center lg:text-left">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
                 Transform Your Legal Practice with AI
