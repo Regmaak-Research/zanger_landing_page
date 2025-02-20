@@ -14,9 +14,9 @@ export default function Hero() {
             className="space-y-10"
           >
             <img
-              src="/assets/zanger-logo.png"
+              src="/Untitled design (8).png"
               alt="Zanger Logo"
-              className="h-56 w-auto mb-4"
+              className="h-48 w-auto"
             />
             <div className="space-y-6">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
