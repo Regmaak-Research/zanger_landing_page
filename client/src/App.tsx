@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import Demo from "@/pages/demo";
+import Trial from "@/pages/trial";
 import { CursorOverlay } from "@/components/cursor-overlay";
 
 function Router() {
@@ -12,6 +13,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/demo" component={Demo} />
+      <Route path="/trial" component={Trial} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -5,7 +5,7 @@ import { Link } from "wouter";
 export default function Hero() {
   return (
     <section className="relative min-h-screen bg-gradient-to-b from-background to-muted/50 flex items-center">
-      <div className="container mx-auto px-4 md:px-8 lg:px-16 pt-16 pb-32">
+      <div className="container mx-auto px-4 md:px-8 lg:px-16 py-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -27,14 +27,14 @@ export default function Hero() {
               </p>
             </div>
             <div className="flex gap-4">
-              <Link href="/demo">
+              <Link href="/trial">
                 <Button size="lg" className="gap-2">
-                  Schedule Demo
+                  Join Closed Beta
                 </Button>
               </Link>
-              <Link href="/trial">
+              <Link href="/demo">
                 <Button size="lg" variant="outline" className="gap-2">
-                  Join Closed Beta
+                  Schedule Demo
                 </Button>
               </Link>
             </div>
