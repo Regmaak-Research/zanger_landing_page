@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Scale, CheckCircle } from "lucide-react";
+import { ChevronRight, CheckCircle } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -11,35 +11,20 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-8"
+            className="space-y-10"
           >
             <img
               src="/Untitled design (8).png"
               alt="Zanger Logo"
-              className="h-16 w-auto mb-8"
+              className="h-24 w-auto"
             />
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
-              Transform Your Legal Practice with AI
-            </h1>
             <div className="space-y-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
+                Transform Your Legal Practice with AI
+              </h1>
               <p className="text-xl text-muted-foreground">
-                Zanger AI is your all-in-one legal platform that combines AI-powered document drafting,
-                intelligent analysis, and practice management tools to help you:
+                Your all-in-one AI legal platform that saves 70% of time on document preparation and case management.
               </p>
-              <ul className="space-y-3 text-lg text-muted-foreground">
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-primary" />
-                  Save 70% of time on document preparation
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-primary" />
-                  Access comprehensive legal research in seconds
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-primary" />
-                  Manage clients and cases efficiently in one place
-                </li>
-              </ul>
             </div>
             <div className="flex flex-wrap gap-4">
               <Button size="lg" className="gap-2">
