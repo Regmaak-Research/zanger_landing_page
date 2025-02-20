@@ -8,6 +8,7 @@ import Demo from "@/pages/demo";
 import Trial from "@/pages/trial";
 import Navbar from "@/components/landing/navbar";
 import { CursorOverlay } from "@/components/cursor-overlay";
+import BackgroundEffect from "@/components/background-effect";
 
 function Router() {
   return (
@@ -23,6 +24,7 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
+      <BackgroundEffect />
       <Navbar />
       <Router />
       <CursorOverlay />
