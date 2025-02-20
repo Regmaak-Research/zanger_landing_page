@@ -23,7 +23,7 @@ export default function Navbar() {
             <img
               src="/zanger-logo.png"
               alt="Zanger Logo"
-              className="h-8 w-auto"
+              className="h-20 w-auto"
             />
           </Link>
 
@@ -43,11 +43,8 @@ export default function Navbar() {
             <Button variant="link" onClick={() => scrollToSection('features')}>
               Features
             </Button>
-            <Button variant="link" onClick={() => scrollToSection('testimonials')}>
-              Testimonials
-            </Button>
-            <Button variant="link" onClick={() => scrollToSection('pricing')}>
-              Pricing
+            <Button variant="link" onClick={() => scrollToSection('solutions')}>
+              Solutions
             </Button>
             <Button variant="link" onClick={() => scrollToSection('faq')}>
               FAQ
@@ -69,11 +66,8 @@ export default function Navbar() {
             <Button variant="ghost" className="w-full justify-start" onClick={() => scrollToSection('features')}>
               Features
             </Button>
-            <Button variant="ghost" className="w-full justify-start" onClick={() => scrollToSection('testimonials')}>
-              Testimonials
-            </Button>
-            <Button variant="ghost" className="w-full justify-start" onClick={() => scrollToSection('pricing')}>
-              Pricing
+            <Button variant="ghost" className="w-full justify-start" onClick={() => scrollToSection('solutions')}>
+              Solutions
             </Button>
             <Button variant="ghost" className="w-full justify-start" onClick={() => scrollToSection('faq')}>
               FAQ
