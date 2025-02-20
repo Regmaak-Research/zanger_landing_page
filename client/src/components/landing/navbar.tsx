@@ -21,9 +21,9 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <img
-              src="../../../attached_assets/zanne-removebg-preview.png"
+              src="/zanger-logo.png"
               alt="Zanger Logo"
-              className="h-12 w-auto"
+              className="h-8 w-auto"
             />
           </Link>
 
