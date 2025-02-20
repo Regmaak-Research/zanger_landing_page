@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Hero() {
   return (
@@ -27,12 +28,16 @@ export default function Hero() {
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="gap-2">
-                Start Free Trial <ChevronRight className="h-4 w-4" />
-              </Button>
-              <Button size="lg" variant="outline">
-                Schedule Demo
-              </Button>
+              <Link href="/trial">
+                <Button size="lg" className="gap-2">
+                  Start Free Trial <ChevronRight className="h-4 w-4" />
+                </Button>
+              </Link>
+              <Link href="/demo">
+                <Button size="lg" variant="outline">
+                  Schedule Demo
+                </Button>
+              </Link>
             </div>
           </motion.div>
           <motion.div
