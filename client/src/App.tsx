@@ -6,6 +6,7 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import Demo from "@/pages/demo";
 import Trial from "@/pages/trial";
+import Navbar from "@/components/landing/navbar";
 import { CursorOverlay } from "@/components/cursor-overlay";
 
 function Router() {
@@ -22,6 +23,7 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
+      <Navbar />
       <Router />
       <CursorOverlay />
       <Toaster />

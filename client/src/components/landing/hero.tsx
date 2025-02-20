@@ -5,7 +5,7 @@ import { Link } from "wouter";
 export default function Hero() {
   return (
     <section className="relative min-h-screen bg-gradient-to-b from-background to-muted/50 flex items-center">
-      <div className="container mx-auto px-4 md:px-8 lg:px-16 pt-12 pb-16">
+      <div className="container mx-auto px-4 md:px-8 lg:px-16 pt-24 pb-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -16,7 +16,7 @@ export default function Hero() {
             <img
               src="/Untitled design (8).png"
               alt="Zanger Logo"
-              className="h-24 sm:h-32 md:h-48 w-auto mx-auto lg:mx-0"
+              className="h-20 sm:h-28 md:h-40 w-auto mx-auto lg:mx-0"
             />
             <div className="space-y-4 md:space-y-6 text-center lg:text-left">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
