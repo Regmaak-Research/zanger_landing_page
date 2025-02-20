@@ -16,19 +16,17 @@ export default function Navbar() {
 
     const element = document.getElementById(id);
     if (element) {
-      const navbarHeight = 64;
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - navbarHeight;
+      const yOffset = -80;
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
       window.scrollTo({
-        top: offsetPosition,
+        top: y,
         behavior: "smooth"
       });
       setIsMobileMenuOpen(false);
     }
   };
 
-  // Close mobile menu when changing location
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location]);

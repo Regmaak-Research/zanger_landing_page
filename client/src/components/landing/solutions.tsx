@@ -29,7 +29,7 @@ export default function Solutions() {
   return (
     <section 
       id="solutions" 
-      className="relative py-24 bg-background scroll-mt-20"
+      className="py-24 bg-background scroll-mt-24"
     >
       <div className="container mx-auto px-4">
         <motion.div
