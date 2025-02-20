@@ -12,7 +12,11 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-xl font-bold">Zanger</span>
+            <img
+              src="/Untitled design (8).png"
+              alt="Zanger Logo"
+              className="h-8 w-auto"
+            />
           </Link>
 
           {/* Mobile menu button */}
