@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, CheckCircle } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -16,7 +16,7 @@ export default function Hero() {
             <img
               src="/Untitled design (8).png"
               alt="Zanger Logo"
-              className="h-24 w-auto"
+              className="h-96 w-auto mb-8"
             />
             <div className="space-y-6">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
