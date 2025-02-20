@@ -2,7 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { z } from "zod";
-import { sendBetaApplicationNotification } from "./utils/email";
+import { sendContactFormNotification, sendNewsletterSubscriptionNotification } from "./utils/email";
 
 const contactSchema = z.object({
   name: z.string().min(2),
@@ -33,20 +33,36 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/contact", async (req, res) => {
     try {
       const data = contactSchema.parse(req.body);
-      // In a real app, you'd store this in a database and send an email
+      const emailSent = await sendContactFormNotification(data);
+
+      if (!emailSent) {
+        throw new Error("Failed to send contact form notification");
+      }
+
       res.json({ success: true });
     } catch (error) {
-      res.status(400).json({ error: "Invalid data" });
+      console.error("Contact form error:", error);
+      res.status(400).json({ 
+        error: error instanceof Error ? error.message : "Failed to process contact form" 
+      });
     }
   });
 
   app.post("/api/newsletter", async (req, res) => {
     try {
       const data = newsletterSchema.parse(req.body);
-      // In a real app, you'd add this to your newsletter service
+      const emailSent = await sendNewsletterSubscriptionNotification(data);
+
+      if (!emailSent) {
+        throw new Error("Failed to send newsletter subscription notification");
+      }
+
       res.json({ success: true });
     } catch (error) {
-      res.status(400).json({ error: "Invalid email" });
+      console.error("Newsletter subscription error:", error);
+      res.status(400).json({ 
+        error: error instanceof Error ? error.message : "Failed to process subscription" 
+      });
     }
   });
 
