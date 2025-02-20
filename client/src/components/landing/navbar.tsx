@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -14,20 +14,26 @@ export default function Navbar() {
       return;
     }
 
-    setTimeout(() => {
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-          inline: 'nearest'
-        });
-        setIsMobileMenuOpen(false);
-      } else {
-        console.warn(`Section with id "${id}" not found`);
-      }
-    }, 100);
+    const element = document.getElementById(id);
+    if (element) {
+      const navbarHeight = 64; // Height of the navbar
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+      setIsMobileMenuOpen(false);
+    } else {
+      console.warn(`Section with id "${id}" not found`);
+    }
   };
+
+  // Close mobile menu when changing location
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b">
