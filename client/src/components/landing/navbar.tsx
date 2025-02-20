@@ -1,12 +1,19 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [location] = useLocation();
+  const isHomePage = location === "/";
 
   const scrollToSection = (id: string) => {
+    if (!isHomePage) {
+      window.location.href = `/#${id}`;
+      return;
+    }
+
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -44,20 +51,21 @@ export default function Navbar() {
 
           {/* Desktop navigation */}
           <div className="hidden lg:flex lg:items-center lg:gap-6">
-            <Button variant="link" onClick={() => scrollToSection('features')}>
-              Features
-            </Button>
-            <Button variant="link" onClick={() => scrollToSection('solutions')}>
-              Solutions
-            </Button>
-            <Button variant="link" onClick={() => scrollToSection('faq')}>
-              FAQ
-            </Button>
+            {isHomePage && (
+              <>
+                <Button variant="link" onClick={() => scrollToSection('features')}>
+                  Features
+                </Button>
+                <Button variant="link" onClick={() => scrollToSection('solutions')}>
+                  Solutions
+                </Button>
+                <Button variant="link" onClick={() => scrollToSection('faq')}>
+                  FAQ
+                </Button>
+              </>
+            )}
 
             {/* CTA Buttons */}
-            <Button asChild variant="ghost" size="sm">
-              <Link href="/demo">Schedule Demo</Link>
-            </Button>
             <Button asChild size="sm">
               <Link href="/trial">Join Beta</Link>
             </Button>
@@ -67,19 +75,20 @@ export default function Navbar() {
         {/* Mobile menu */}
         {isMobileMenuOpen && (
           <div className="lg:hidden py-4 space-y-2">
-            <Button variant="ghost" className="w-full justify-start" onClick={() => scrollToSection('features')}>
-              Features
-            </Button>
-            <Button variant="ghost" className="w-full justify-start" onClick={() => scrollToSection('solutions')}>
-              Solutions
-            </Button>
-            <Button variant="ghost" className="w-full justify-start" onClick={() => scrollToSection('faq')}>
-              FAQ
-            </Button>
-            <div className="pt-2 space-y-2">
-              <Button asChild variant="ghost" className="w-full justify-start">
-                <Link href="/demo">Schedule Demo</Link>
-              </Button>
+            {isHomePage && (
+              <>
+                <Button variant="ghost" className="w-full justify-start" onClick={() => scrollToSection('features')}>
+                  Features
+                </Button>
+                <Button variant="ghost" className="w-full justify-start" onClick={() => scrollToSection('solutions')}>
+                  Solutions
+                </Button>
+                <Button variant="ghost" className="w-full justify-start" onClick={() => scrollToSection('faq')}>
+                  FAQ
+                </Button>
+              </>
+            )}
+            <div className="pt-2">
               <Button asChild className="w-full justify-start">
                 <Link href="/trial">Join Beta</Link>
               </Button>
