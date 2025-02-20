@@ -5,7 +5,7 @@ import { ChevronRight } from "lucide-react";
 export default function Hero() {
   return (
     <section className="relative min-h-screen bg-gradient-to-b from-background to-muted/50 flex items-center">
-      <div className="container mx-auto px-4 pt-16 pb-32">
+      <div className="container mx-auto px-4 md:px-8 lg:px-16 pt-16 pb-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
