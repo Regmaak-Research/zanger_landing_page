@@ -18,6 +18,8 @@ export default function Navbar() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setIsMobileMenuOpen(false);
+    } else {
+      console.warn(`Section with id "${id}" not found`);
     }
   };
 
