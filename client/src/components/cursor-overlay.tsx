@@ -4,7 +4,7 @@ import { useEffect } from "react";
 export function CursorOverlay() {
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
-  
+
   const springConfig = { damping: 25, stiffness: 200 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
@@ -31,12 +31,23 @@ export function CursorOverlay() {
       }}
     >
       <div className="relative">
-        <div className="absolute w-8 h-8 border-2 border-white rounded-full" />
+        <motion.div 
+          className="absolute w-8 h-8 border-2 border-white rounded-full"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.5, 1, 0.5],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
         <motion.div
           className="absolute w-2 h-2 bg-white rounded-full"
           style={{ left: 14, top: 14 }}
           animate={{
-            scale: [1, 1.2, 1],
+            scale: [1, 1.5, 1],
           }}
           transition={{
             duration: 1,
