@@ -5,7 +5,7 @@ import { ChevronRight } from "lucide-react";
 export default function Hero() {
   return (
     <section className="relative min-h-screen bg-gradient-to-b from-background to-muted/50 flex items-center">
-      <div className="container mx-auto px-4 py-32">
+      <div className="container mx-auto px-4 pt-16 pb-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -16,7 +16,7 @@ export default function Hero() {
             <img
               src="/Untitled design (8).png"
               alt="Zanger Logo"
-              className="h-48 w-auto mb-8"
+              className="h-48 w-auto"
             />
             <div className="space-y-6">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
