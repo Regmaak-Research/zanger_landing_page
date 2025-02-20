@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
@@ -21,9 +20,6 @@ const betaApplicationSchema = z.object({
   name: z.string().min(2, "Name is required"),
   email: z.string().email("Invalid email address"),
   company: z.string().min(2, "Company name is required"),
-  phone: z.string().min(10, "Valid phone number is required"),
-  teamSize: z.string().min(1, "Team size is required"),
-  useCase: z.string().min(50, "Please provide more detail about your use case"),
 });
 
 type BetaApplicationData = z.infer<typeof betaApplicationSchema>;
@@ -36,9 +32,6 @@ export default function Trial() {
       name: "",
       email: "",
       company: "",
-      phone: "",
-      teamSize: "",
-      useCase: "",
     },
   });
 
@@ -46,8 +39,8 @@ export default function Trial() {
     try {
       await apiRequest("POST", "/api/beta-application", data);
       toast({
-        title: "Application Received!",
-        description: "We'll review your application and get back to you within 48 hours.",
+        title: "Welcome to the Closed Beta!",
+        description: "We'll be in touch with your access details shortly.",
       });
       form.reset();
     } catch (error) {
@@ -65,13 +58,13 @@ export default function Trial() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="max-w-2xl mx-auto"
+        className="max-w-md mx-auto"
       >
         <Card>
           <CardHeader>
-            <CardTitle className="text-2xl text-center">Apply for Beta Access</CardTitle>
+            <CardTitle className="text-2xl text-center">Join Our Closed Beta</CardTitle>
             <CardDescription className="text-center mt-2">
-              Join our exclusive beta program and help shape the future of legal AI
+              Be among the first to experience the future of legal AI
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -82,7 +75,7 @@ export default function Trial() {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Full Name</FormLabel>
+                      <FormLabel>Name</FormLabel>
                       <FormControl>
                         <Input placeholder="John Doe" {...field} />
                       </FormControl>
@@ -110,7 +103,7 @@ export default function Trial() {
                   name="company"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Company Name</FormLabel>
+                      <FormLabel>Company</FormLabel>
                       <FormControl>
                         <Input placeholder="Legal Firm LLC" {...field} />
                       </FormControl>
@@ -119,54 +112,8 @@ export default function Trial() {
                   )}
                 />
 
-                <FormField
-                  control={form.control}
-                  name="phone"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Phone Number</FormLabel>
-                      <FormControl>
-                        <Input placeholder="+1 (555) 000-0000" type="tel" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="teamSize"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Team Size</FormLabel>
-                      <FormControl>
-                        <Input placeholder="e.g., 5-10 lawyers" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="useCase"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>How would you use Zanger AI?</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder="Tell us about your current challenges and how you'd like to use our platform..."
-                          className="min-h-[120px]"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
                 <Button type="submit" className="w-full">
-                  Submit Application
+                  Apply for Access
                 </Button>
               </form>
             </Form>

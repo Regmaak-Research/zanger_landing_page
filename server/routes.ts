@@ -19,9 +19,6 @@ const betaApplicationSchema = z.object({
   name: z.string().min(2),
   email: z.string().email(),
   company: z.string().min(2),
-  phone: z.string().min(10),
-  teamSize: z.string().min(1),
-  useCase: z.string().min(50),
 });
 
 const demoSchema = z.object({

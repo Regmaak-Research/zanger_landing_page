@@ -26,10 +26,15 @@ export default function Hero() {
                 Your all-in-one AI legal platform that saves 70% of time on document preparation and case management.
               </p>
             </div>
-            <div>
+            <div className="flex gap-4">
               <Link href="/demo">
                 <Button size="lg" className="gap-2">
                   Schedule Demo
+                </Button>
+              </Link>
+              <Link href="/trial">
+                <Button size="lg" variant="outline" className="gap-2">
+                  Join Closed Beta
                 </Button>
               </Link>
             </div>

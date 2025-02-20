@@ -10,28 +10,20 @@ interface BetaApplicationData {
   name: string;
   email: string;
   company: string;
-  phone: string;
-  teamSize: string;
-  useCase: string;
 }
 
 export async function sendBetaApplicationNotification(data: BetaApplicationData) {
   const emailContent = `
     New Beta Application Received:
-    
+
     Name: ${data.name}
     Email: ${data.email}
     Company: ${data.company}
-    Phone: ${data.phone}
-    Team Size: ${data.teamSize}
-    
-    Use Case:
-    ${data.useCase}
   `;
 
   const msg = {
     to: 'yelaman@zangerai.com',
-    from: 'no-reply@zangerai.com', // Make sure this is verified in SendGrid
+    from: 'no-reply@zangerai.com',
     subject: `New Beta Application: ${data.company}`,
     text: emailContent,
   };
