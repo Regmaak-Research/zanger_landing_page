@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { z } from "zod";
+import { sendBetaApplicationNotification } from "./utils/email";
 
 const contactSchema = z.object({
   name: z.string().min(2),
@@ -55,10 +56,20 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/beta-application", async (req, res) => {
     try {
       const data = betaApplicationSchema.parse(req.body);
-      // In a real app, you'd store the application and send notification emails
+
+      // Send email notification
+      const emailSent = await sendBetaApplicationNotification(data);
+
+      if (!emailSent) {
+        throw new Error("Failed to send email notification");
+      }
+
       res.json({ success: true });
     } catch (error) {
-      res.status(400).json({ error: "Invalid data" });
+      console.error("Beta application error:", error);
+      res.status(400).json({ 
+        error: error instanceof Error ? error.message : "Failed to process application" 
+      });
     }
   });
 
