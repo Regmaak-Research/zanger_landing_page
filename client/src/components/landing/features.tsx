@@ -105,12 +105,7 @@ export default function Features() {
               >
                 <Card className="h-full hover:shadow-lg transition-shadow duration-300">
                   <CardHeader>
-                    <motion.div
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      <feature.icon className="h-12 w-12 text-primary mb-4" />
-                    </motion.div>
+                    <feature.icon className="h-12 w-12 text-primary mb-4" />
                     <CardTitle>{feature.title}</CardTitle>
                     <CardDescription className="text-base">{feature.description}</CardDescription>
                   </CardHeader>
