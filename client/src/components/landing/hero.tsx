@@ -27,16 +27,16 @@ export default function Hero() {
               </p>
             </div>
             <div className="flex gap-4">
-              <Link href="/trial">
-                <Button size="lg" className="gap-2">
+              <Button asChild size="lg" className="gap-2">
+                <Link href="/trial">
                   Join Closed Beta
-                </Button>
-              </Link>
-              <Link href="/demo">
-                <Button size="lg" variant="outline" className="gap-2">
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="gap-2">
+                <Link href="/demo">
                   Schedule Demo
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
           </motion.div>
           <motion.div
