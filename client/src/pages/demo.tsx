@@ -1,7 +1,18 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useEffect } from "react";
 
 export default function Demo() {
+  useEffect(() => {
+    // Ensure Calendly widget is initialized
+    if ((window as any).Calendly) {
+      (window as any).Calendly.initInlineWidget({
+        url: 'https://calendly.com/yelaman-kazbekov/let-s-talk-legal-solutions-1',
+        parentElement: document.querySelector('.calendly-inline-widget'),
+      });
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/50 py-16 px-4">
       <motion.div
@@ -16,8 +27,7 @@ export default function Demo() {
           </CardHeader>
           <CardContent className="min-h-[700px]">
             <div
-              className="calendly-inline-widget h-[650px]"
-              data-url="https://calendly.com/yelaman-kazbekov/let-s-talk-legal-solutions-1"
+              className="calendly-inline-widget w-full h-[650px]"
             />
           </CardContent>
         </Card>
