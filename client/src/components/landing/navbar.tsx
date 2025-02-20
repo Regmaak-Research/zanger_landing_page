@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 export default function Navbar() {
@@ -23,7 +23,7 @@ export default function Navbar() {
             <img
               src="/zanger-logo.png"
               alt="Zanger Logo"
-              className="h-20 w-auto"
+              className="h-24 w-auto"
             />
           </Link>
 
@@ -34,7 +34,11 @@ export default function Navbar() {
               size="icon"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              <Menu className="h-6 w-6" />
+              {isMobileMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </Button>
           </div>
 
