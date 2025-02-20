@@ -10,6 +10,9 @@ export function CursorOverlay() {
   const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
+    // Only add cursor effect on desktop
+    if (window.innerWidth <= 768) return;
+
     const moveCursor = (e: MouseEvent) => {
       cursorX.set(e.clientX - 16);
       cursorY.set(e.clientY - 16);
@@ -22,6 +25,11 @@ export function CursorOverlay() {
     };
   }, []);
 
+  // Hide on mobile
+  if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+    return null;
+  }
+
   return (
     <motion.div
       className="fixed top-0 left-0 pointer-events-none z-50 mix-blend-difference"
@@ -31,18 +39,10 @@ export function CursorOverlay() {
       }}
     >
       <div className="relative">
-        <div className="absolute w-8 h-8 border-2 border-white rounded-full" />
+        <div className="absolute w-8 h-8 border border-white rounded-full opacity-40" />
         <motion.div
-          className="absolute w-2 h-2 bg-white rounded-full"
-          style={{ left: 14, top: 14 }}
-          animate={{
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 1,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          className="absolute w-1 h-1 bg-white rounded-full opacity-60"
+          style={{ left: 15, top: 15 }}
         />
       </div>
     </motion.div>

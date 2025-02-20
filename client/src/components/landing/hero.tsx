@@ -16,9 +16,9 @@ export default function Hero() {
             <img
               src="/Untitled design (8).png"
               alt="Zanger Logo"
-              className="h-48 w-auto"
+              className="h-32 md:h-48 w-auto mx-auto lg:mx-0"
             />
-            <div className="space-y-6">
+            <div className="space-y-6 text-center lg:text-left">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
                 Transform Your Legal Practice with AI
               </h1>
@@ -26,7 +26,7 @@ export default function Hero() {
                 Your all-in-one AI legal platform that saves 70% of time on document preparation and case management.
               </p>
             </div>
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button asChild size="lg" className="gap-2">
                 <Link href="/trial">
                   Join Closed Beta
@@ -43,7 +43,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative aspect-square rounded-lg overflow-hidden bg-primary/5 p-6"
+            className="relative aspect-square rounded-lg overflow-hidden bg-primary/5 p-6 hidden lg:block"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
             <img

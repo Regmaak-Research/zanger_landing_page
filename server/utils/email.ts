@@ -6,6 +6,8 @@ if (!process.env.SENDGRID_API_KEY) {
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
+const VERIFIED_SENDER = 'support@zangerai.com'; // Use your verified sender email
+
 interface ContactFormData {
   name: string;
   email: string;
@@ -29,8 +31,8 @@ export async function sendContactFormNotification(data: ContactFormData) {
 
   const msg = {
     to: 'yelaman@zangerai.com',
-    from: 'no-reply@zangerai.com',
-    subject: `New Contact Form Submission: ${data.company}`,
+    from: VERIFIED_SENDER,
+    subject: `New Contact Form Submission from ${data.company}`,
     text: emailContent,
   };
 
@@ -39,7 +41,7 @@ export async function sendContactFormNotification(data: ContactFormData) {
     return true;
   } catch (error) {
     console.error('SendGrid email error:', error);
-    return false;
+    throw error; // Propagate the error for better debugging
   }
 }
 
@@ -52,7 +54,7 @@ export async function sendNewsletterSubscriptionNotification(data: NewsletterDat
 
   const msg = {
     to: 'yelaman@zangerai.com',
-    from: 'no-reply@zangerai.com',
+    from: VERIFIED_SENDER,
     subject: 'New Newsletter Subscription',
     text: emailContent,
   };
@@ -62,7 +64,7 @@ export async function sendNewsletterSubscriptionNotification(data: NewsletterDat
     return true;
   } catch (error) {
     console.error('SendGrid email error:', error);
-    return false;
+    throw error; // Propagate the error for better debugging
   }
 }
 
@@ -83,8 +85,8 @@ export async function sendBetaApplicationNotification(data: BetaApplicationData)
 
   const msg = {
     to: 'yelaman@zangerai.com',
-    from: 'no-reply@zangerai.com',
-    subject: `New Beta Application: ${data.company}`,
+    from: VERIFIED_SENDER,
+    subject: `New Beta Application from ${data.company}`,
     text: emailContent,
   };
 
@@ -93,6 +95,6 @@ export async function sendBetaApplicationNotification(data: BetaApplicationData)
     return true;
   } catch (error) {
     console.error('SendGrid email error:', error);
-    return false;
+    throw error;
   }
 }
