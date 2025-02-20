@@ -55,32 +55,32 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-2xl mx-auto"
+          className="max-w-lg mx-auto"
         >
-          <h2 className="text-3xl font-bold mb-4 text-center">Contact Us</h2>
-          <p className="text-muted-foreground text-center mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-center">Contact Us</h2>
+          <p className="text-sm md:text-base text-muted-foreground text-center mb-6 md:mb-8">
             Get in touch to learn more about how Zanger AI can help your practice.
           </p>
 
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 md:space-y-6">
               <FormField
                 control={form.control}
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Name</FormLabel>
+                    <FormLabel className="text-sm md:text-base">Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="John Doe" {...field} />
+                      <Input placeholder="John Doe" className="text-sm md:text-base" {...field} />
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-xs md:text-sm" />
                   </FormItem>
                 )}
               />
@@ -90,11 +90,11 @@ export default function ContactForm() {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Email</FormLabel>
+                    <FormLabel className="text-sm md:text-base">Email</FormLabel>
                     <FormControl>
-                      <Input placeholder="john@example.com" {...field} />
+                      <Input placeholder="john@example.com" className="text-sm md:text-base" {...field} />
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-xs md:text-sm" />
                   </FormItem>
                 )}
               />
@@ -104,11 +104,11 @@ export default function ContactForm() {
                 name="company"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Company</FormLabel>
+                    <FormLabel className="text-sm md:text-base">Company</FormLabel>
                     <FormControl>
-                      <Input placeholder="Legal Firm LLC" {...field} />
+                      <Input placeholder="Legal Firm LLC" className="text-sm md:text-base" {...field} />
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-xs md:text-sm" />
                   </FormItem>
                 )}
               />
@@ -118,20 +118,20 @@ export default function ContactForm() {
                 name="message"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Message</FormLabel>
+                    <FormLabel className="text-sm md:text-base">Message</FormLabel>
                     <FormControl>
                       <Textarea
                         placeholder="Tell us about your needs..."
-                        className="min-h-[120px]"
+                        className="min-h-[120px] text-sm md:text-base"
                         {...field}
                       />
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-xs md:text-sm" />
                   </FormItem>
                 )}
               />
 
-              <Button type="submit" className="w-full">
+              <Button type="submit" className="w-full md:text-base">
                 Send Message
               </Button>
             </form>

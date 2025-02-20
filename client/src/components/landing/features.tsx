@@ -75,22 +75,22 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="py-24 bg-muted/30">
+    <section className="py-16 md:py-24 bg-muted/30">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-3xl font-bold mb-4">Powerful Features</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">Powerful Features</h2>
+          <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto px-4">
             Transform your legal practice with our comprehensive suite of AI-powered tools and features.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
@@ -99,33 +99,26 @@ export default function Features() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Card className="h-full hover:shadow-lg transition-shadow duration-300">
-                  <CardHeader>
-                    <feature.icon className="h-12 w-12 text-primary mb-4" />
-                    <CardTitle>{feature.title}</CardTitle>
-                    <CardDescription className="text-base">{feature.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2">
-                      {feature.benefits.map((benefit) => (
-                        <motion.li
-                          key={benefit}
-                          className="flex items-center gap-2 text-sm text-muted-foreground"
-                          whileHover={{ x: 5 }}
-                          transition={{ type: "spring", stiffness: 300 }}
-                        >
-                          <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
-                          {benefit}
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              </motion.div>
+              <Card className="h-full hover:shadow-lg transition-shadow duration-300">
+                <CardHeader>
+                  <feature.icon className="h-10 w-10 md:h-12 md:w-12 text-primary mb-4" />
+                  <CardTitle className="text-lg md:text-xl">{feature.title}</CardTitle>
+                  <CardDescription className="text-sm md:text-base">{feature.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    {feature.benefits.map((benefit) => (
+                      <li
+                        key={benefit}
+                        className="flex items-center gap-2 text-xs md:text-sm text-muted-foreground"
+                      >
+                        <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
+                        {benefit}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
             </motion.div>
           ))}
         </div>

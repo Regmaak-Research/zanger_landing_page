@@ -47,22 +47,22 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="py-24 bg-primary text-primary-foreground">
+    <section className="py-16 md:py-24 bg-primary text-primary-foreground">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-2xl mx-auto text-center"
+          className="max-w-lg mx-auto text-center"
         >
-          <h2 className="text-3xl font-bold mb-4">Stay Updated</h2>
-          <p className="text-primary-foreground/80 mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">Stay Updated</h2>
+          <p className="text-sm md:text-base text-primary-foreground/80 mb-6 md:mb-8">
             Subscribe to our newsletter for the latest updates, features, and legal tech insights.
           </p>
 
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="flex gap-4 max-w-md mx-auto">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <FormField
                 control={form.control}
                 name="email"
@@ -71,15 +71,15 @@ export default function Newsletter() {
                     <FormControl>
                       <Input
                         placeholder="Enter your email"
-                        className="bg-primary-foreground text-primary"
+                        className="bg-primary-foreground text-primary text-sm md:text-base w-full"
                         {...field}
                       />
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-xs md:text-sm" />
                   </FormItem>
                 )}
               />
-              <Button type="submit" variant="secondary">
+              <Button type="submit" variant="secondary" className="w-full sm:w-auto text-sm md:text-base">
                 Subscribe
               </Button>
             </form>

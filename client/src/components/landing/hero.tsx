@@ -11,28 +11,28 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-10"
+            className="space-y-8 md:space-y-10"
           >
             <img
               src="/Untitled design (8).png"
               alt="Zanger Logo"
-              className="h-32 md:h-48 w-auto mx-auto lg:mx-0"
+              className="h-24 sm:h-32 md:h-48 w-auto mx-auto lg:mx-0"
             />
-            <div className="space-y-6 text-center lg:text-left">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
+            <div className="space-y-4 md:space-y-6 text-center lg:text-left">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
                 Transform Your Legal Practice with AI
               </h1>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-lg md:text-xl text-muted-foreground">
                 Your all-in-one AI legal platform that saves 70% of time on document preparation and case management.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button asChild size="lg" className="gap-2">
+              <Button asChild size="lg" className="w-full sm:w-auto gap-2">
                 <Link href="/trial">
                   Join Closed Beta
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="gap-2">
+              <Button asChild size="lg" variant="outline" className="w-full sm:w-auto gap-2">
                 <Link href="/demo">
                   Schedule Demo
                 </Link>
