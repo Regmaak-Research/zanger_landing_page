@@ -14,11 +14,13 @@ const newsletterSchema = z.object({
   email: z.string().email(),
 });
 
-const trialSchema = z.object({
+const betaApplicationSchema = z.object({
   name: z.string().min(2),
   email: z.string().email(),
   company: z.string().min(2),
   phone: z.string().min(10),
+  teamSize: z.string().min(1),
+  useCase: z.string().min(50),
 });
 
 const demoSchema = z.object({
@@ -50,10 +52,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.post("/api/trial", async (req, res) => {
+  app.post("/api/beta-application", async (req, res) => {
     try {
-      const data = trialSchema.parse(req.body);
-      // In a real app, you'd create a trial account and send welcome email
+      const data = betaApplicationSchema.parse(req.body);
+      // In a real app, you'd store the application and send notification emails
       res.json({ success: true });
     } catch (error) {
       res.status(400).json({ error: "Invalid data" });

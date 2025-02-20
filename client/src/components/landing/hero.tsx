@@ -30,7 +30,7 @@ export default function Hero() {
             <div className="flex flex-wrap gap-4">
               <Link href="/trial">
                 <Button size="lg" className="gap-2">
-                  Start Free Trial <ChevronRight className="h-4 w-4" />
+                  Join Beta Program <ChevronRight className="h-4 w-4" />
                 </Button>
               </Link>
               <Link href="/demo">

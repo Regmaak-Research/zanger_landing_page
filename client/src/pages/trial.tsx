@@ -12,43 +12,48 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 
-const trialSchema = z.object({
+const betaApplicationSchema = z.object({
   name: z.string().min(2, "Name is required"),
   email: z.string().email("Invalid email address"),
   company: z.string().min(2, "Company name is required"),
   phone: z.string().min(10, "Valid phone number is required"),
+  teamSize: z.string().min(1, "Team size is required"),
+  useCase: z.string().min(50, "Please provide more detail about your use case"),
 });
 
-type TrialFormData = z.infer<typeof trialSchema>;
+type BetaApplicationData = z.infer<typeof betaApplicationSchema>;
 
 export default function Trial() {
   const { toast } = useToast();
-  const form = useForm<TrialFormData>({
-    resolver: zodResolver(trialSchema),
+  const form = useForm<BetaApplicationData>({
+    resolver: zodResolver(betaApplicationSchema),
     defaultValues: {
       name: "",
       email: "",
       company: "",
       phone: "",
+      teamSize: "",
+      useCase: "",
     },
   });
 
-  const onSubmit = async (data: TrialFormData) => {
+  const onSubmit = async (data: BetaApplicationData) => {
     try {
-      await apiRequest("POST", "/api/trial", data);
+      await apiRequest("POST", "/api/beta-application", data);
       toast({
-        title: "Success!",
-        description: "Your trial has been activated. Check your email for next steps.",
+        title: "Application Received!",
+        description: "We'll review your application and get back to you within 48 hours.",
       });
       form.reset();
     } catch (error) {
       toast({
         title: "Error",
-        description: "Failed to start trial. Please try again.",
+        description: "Failed to submit application. Please try again.",
         variant: "destructive",
       });
     }
@@ -60,11 +65,14 @@ export default function Trial() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="max-w-xl mx-auto"
+        className="max-w-2xl mx-auto"
       >
         <Card>
           <CardHeader>
-            <CardTitle className="text-2xl text-center">Start Your Free Trial</CardTitle>
+            <CardTitle className="text-2xl text-center">Apply for Beta Access</CardTitle>
+            <CardDescription className="text-center mt-2">
+              Join our exclusive beta program and help shape the future of legal AI
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <Form {...form}>
@@ -125,8 +133,40 @@ export default function Trial() {
                   )}
                 />
 
+                <FormField
+                  control={form.control}
+                  name="teamSize"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Team Size</FormLabel>
+                      <FormControl>
+                        <Input placeholder="e.g., 5-10 lawyers" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="useCase"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>How would you use Zanger AI?</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="Tell us about your current challenges and how you'd like to use our platform..."
+                          className="min-h-[120px]"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
                 <Button type="submit" className="w-full">
-                  Start Free Trial
+                  Submit Application
                 </Button>
               </form>
             </Form>
