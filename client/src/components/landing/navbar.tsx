@@ -16,13 +16,9 @@ export default function Navbar() {
 
     const element = document.getElementById(id);
     if (element) {
-      const yOffset = -80;
-      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-      window.scrollTo({
-        top: y,
-        behavior: "smooth"
-      });
+      const offset = 100;
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.scrollBy(0, -offset);
       setIsMobileMenuOpen(false);
     }
   };
