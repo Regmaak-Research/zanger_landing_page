@@ -14,7 +14,7 @@ export default function Hero() {
             className="space-y-10"
           >
             <img
-              src="../attached_assets/logo_new.png"
+              src="/assets/zanger-logo.png"
               alt="Zanger Logo"
               className="h-48 w-auto"
             />
