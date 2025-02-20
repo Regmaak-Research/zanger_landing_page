@@ -75,7 +75,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="py-24 mesh-gradient section-divider">
+    <section className="py-24 bg-muted/30">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -103,7 +103,7 @@ export default function Features() {
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow duration-300 backdrop-blur-sm bg-background/95">
+                <Card className="h-full hover:shadow-lg transition-shadow duration-300">
                   <CardHeader>
                     <feature.icon className="h-12 w-12 text-primary mb-4" />
                     <CardTitle>{feature.title}</CardTitle>

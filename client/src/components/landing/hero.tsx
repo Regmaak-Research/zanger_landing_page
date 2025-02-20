@@ -4,7 +4,7 @@ import { Link } from "wouter";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen mesh-gradient section-divider flex items-center">
+    <section className="relative min-h-screen bg-gradient-to-b from-background to-muted/50 flex items-center">
       <div className="container mx-auto px-4 md:px-8 lg:px-16 pt-12 pb-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -13,12 +13,10 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             className="space-y-10"
           >
-            <motion.img
+            <img
               src="/Untitled design (8).png"
               alt="Zanger Logo"
               className="h-48 w-auto"
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 200 }}
             />
             <div className="space-y-6">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
@@ -48,12 +46,10 @@ export default function Hero() {
             className="relative aspect-square rounded-lg overflow-hidden bg-primary/5 p-6"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
-            <motion.img
+            <img
               src="https://images.unsplash.com/photo-1517048676732-d65bc937f952"
               alt="Modern legal office environment"
               className="object-cover w-full h-full rounded-lg"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.4 }}
             />
           </motion.div>
         </div>
