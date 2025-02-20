@@ -14,13 +14,22 @@ export default function Navbar() {
       return;
     }
 
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
-    } else {
-      console.warn(`Section with id "${id}" not found`);
-    }
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        const headerOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+        setIsMobileMenuOpen(false);
+      } else {
+        console.warn(`Section with id "${id}" not found`);
+      }
+    }, 100);
   };
 
   return (
