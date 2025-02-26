@@ -13,13 +13,13 @@ const testimonials = [
     name: "Michael Chen",
     role: "Legal Partner",
     content: "The research capabilities are outstanding. It's like having a whole team of paralegals at your fingertips.",
-    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
   },
   {
     name: "Elena Rodriguez",
     role: "Immigration Attorney",
     content: "Client management has never been easier. The platform keeps everything organized and accessible.",
-    image: "https://images.unsplash.com/photo-1658249682487-882436e01650",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2",
   },
 ];
 
