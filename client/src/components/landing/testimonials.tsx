@@ -53,10 +53,14 @@ export default function Testimonials() {
                 <CardContent className="pt-6">
                   <div className="flex items-center gap-4 mb-4">
                     <Avatar className="h-12 w-12 overflow-hidden">
-                      <AvatarImage 
-                        src={testimonial.image} 
+                      <AvatarImage
+                        src={testimonial.image}
                         alt={testimonial.name}
-                        className="object-cover"
+                        className={`object-cover ${
+                          testimonial.name === "Michael Chen"
+                            ? "object-cover"
+                            : "object-cover w-full h-full scale-110 -translate-y-1"
+                        }`}
                       />
                     </Avatar>
                     <div>
