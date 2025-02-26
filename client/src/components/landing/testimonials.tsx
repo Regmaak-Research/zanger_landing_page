@@ -13,7 +13,7 @@ const testimonials = [
     name: "Michael Chen",
     role: "Legal Partner",
     content: "The research capabilities are outstanding. It's like having a whole team of paralegals at your fingertips.",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&h=200&q=80&crop=faces&faceindex=1",
+    image: "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?auto=format&fit=crop&w=200&h=200&q=80&crop=faces&faceindex=1",
   },
   {
     name: "Elena Rodriguez",
