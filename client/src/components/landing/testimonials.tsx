@@ -7,19 +7,19 @@ const testimonials = [
     name: "Sarah Anderson",
     role: "Corporate Lawyer",
     content: "Zanger AI has transformed how I handle document drafting. It's cut my preparation time in half.",
-    image: "https://images.unsplash.com/photo-1485217988980-11786ced9454?auto=format&fit=crop&w=200&h=200&q=80",
+    image: "https://images.unsplash.com/photo-1485217988980-11786ced9454?auto=format&fit=crop&w=200&h=200&q=80&crop=faces&faceindex=1",
   },
   {
     name: "Michael Chen",
     role: "Legal Partner",
     content: "The research capabilities are outstanding. It's like having a whole team of paralegals at your fingertips.",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&h=200&q=80",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&h=200&q=80&crop=faces&faceindex=1",
   },
   {
     name: "Elena Rodriguez",
     role: "Immigration Attorney",
     content: "Client management has never been easier. The platform keeps everything organized and accessible.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&h=200&q=80",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&h=200&q=80&crop=faces&faceindex=1",
   },
 ];
 
@@ -56,7 +56,7 @@ export default function Testimonials() {
                       <AvatarImage 
                         src={testimonial.image} 
                         alt={testimonial.name}
-                        className="object-cover w-full h-full"
+                        className="object-cover w-full h-full scale-110 -translate-y-1"
                       />
                     </Avatar>
                     <div>
