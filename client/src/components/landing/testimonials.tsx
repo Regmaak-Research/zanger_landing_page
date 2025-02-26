@@ -6,19 +6,19 @@ const testimonials = [
   {
     name: "Sarah Anderson",
     role: "Corporate Lawyer",
-    content: "Zanger AI has transformed how I handle document drafting. It's cut my preparation time in half.",
+    content: "Zanger AI streamlines our entire document workflow - from drafting to signing. The new e-signature feature is a game-changer.",
     image: "https://images.unsplash.com/photo-1485217988980-11786ced9454?auto=format&fit=crop&w=200&h=200&q=80&crop=faces&faceindex=1",
   },
   {
     name: "Michael Chen",
     role: "Legal Partner",
-    content: "The research capabilities are outstanding. It's like having a whole team of paralegals at your fingertips.",
+    content: "The secure file sharing and collaborative features have transformed how our firm handles documents. From research to client approvals, everything is seamless.",
     image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&h=200&q=80&crop=faces&faceindex=1",
   },
   {
     name: "Elena Rodriguez",
     role: "Immigration Attorney",
-    content: "Client management has never been easier. The platform keeps everything organized and accessible.",
+    content: "The complete document lifecycle management has revolutionized our practice. Secure sharing and e-signatures make client collaboration effortless.",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&h=200&q=80&crop=faces&faceindex=1",
   },
 ];
@@ -36,7 +36,7 @@ export default function Testimonials() {
         >
           <h2 className="text-3xl font-bold mb-4">What Legal Professionals Say</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Trusted by law firms and legal professionals worldwide.
+            Transforming legal document management with AI-powered drafting, secure sharing, and e-signatures.
           </p>
         </motion.div>
 
