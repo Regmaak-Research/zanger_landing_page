@@ -56,11 +56,7 @@ export default function Testimonials() {
                       <AvatarImage 
                         src={testimonial.image} 
                         alt={testimonial.name}
-                        className={`object-cover w-full h-full scale-110 ${
-                          testimonial.name === "Michael Chen" 
-                            ? "-translate-y-2" 
-                            : "-translate-y-1"
-                        }`}
+                        className="object-cover w-full h-full scale-110 -translate-y-1"
                       />
                     </Avatar>
                     <div>
