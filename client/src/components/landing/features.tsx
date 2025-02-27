@@ -12,62 +12,62 @@ import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/com
 
 const features = [
   {
-    title: "AI-Powered Document Drafting",
-    description: "Create legally sound documents in minutes, not hours. Our AI understands context and generates customized legal documents while ensuring compliance.",
+    title: "Enterprise-Grade Document Creation",
+    description: "Harness the power of advanced AI to generate precise, compliant legal documents in minutes. Built for the modern legal practice.",
     benefits: [
-      "70% faster document preparation",
-      "Built-in legal compliance checks",
-      "Customizable templates library"
+      "Intelligent document automation",
+      "Industry-leading compliance checks",
+      "Advanced template customization"
     ],
     icon: FileText,
   },
   {
-    title: "Intelligent Legal Analysis",
-    description: "Get instant insights and risk assessments. Our AI analyzes cases, identifies precedents, and provides actionable recommendations.",
+    title: "Secure Document Sharing & E-Signatures",
+    description: "Bank-level security meets seamless collaboration. Share, track, and sign documents with confidence in a unified platform.",
     benefits: [
-      "Automated case analysis",
-      "Risk assessment reports",
-      "Precedent matching"
+      "Enterprise-grade encryption",
+      "Compliant e-signatures",
+      "Real-time collaboration"
     ],
     icon: Scale,
   },
   {
-    title: "Smart Research Assistant",
-    description: "Access comprehensive legal research instantly. Search across cases, statutes, and regulations with natural language queries.",
+    title: "AI-Powered Legal Research",
+    description: "Transform your research process with intelligent analytics and comprehensive case analysis powered by cutting-edge AI.",
     benefits: [
-      "Natural language search",
-      "Real-time updates",
-      "Citation recommendations"
+      "Contextual search intelligence",
+      "Precedent analysis",
+      "Real-time legal updates"
     ],
     icon: Search,
   },
   {
-    title: "Automated Calendar",
-    description: "Never miss a deadline or appointment. Our smart calendar manages your schedule, court dates, and filing deadlines automatically.",
+    title: "Smart Document Management",
+    description: "Centralize your document lifecycle with intelligent organization, version control, and automated workflows.",
     benefits: [
-      "Court date reminders",
-      "Deadline tracking",
-      "Multi-calendar sync"
+      "Advanced version control",
+      "Intelligent categorization",
+      "Automated workflows"
     ],
     icon: Calendar,
   },
   {
-    title: "Client Portal",
-    description: "Provide a seamless client experience with secure document sharing, communication, and case updates in one place.",
+    title: "Client Collaboration Hub",
+    description: "Elevate client experience with a secure, intuitive portal for document sharing, approvals, and communication.",
     benefits: [
-      "Secure document sharing",
-      "Real-time case updates",
-      "Client communication hub"
+      "Secure client portal",
+      "Document approval workflows",
+      "Client communication tools"
     ],
     icon: Users,
   },
   {
-    title: "Email Management",
-    description: "Keep your communications organized with AI-powered email sorting, tagging, and priority management.",
+    title: "Enterprise Security & Compliance",
+    description: "Rest assured with SOC 2 compliant infrastructure, advanced encryption, and comprehensive audit trails.",
     benefits: [
-      "Smart email categorization",
-      "Priority inbox",
-      "Template responses"
+      "SOC 2 compliance",
+      "End-to-end encryption",
+      "Detailed audit logs"
     ],
     icon: Mail,
   },
@@ -87,9 +87,9 @@ export default function Features() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">Powerful Features</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">Enterprise-Grade Legal Technology</h2>
           <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto px-4">
-            Transform your legal practice with our comprehensive suite of AI-powered tools and features.
+            Experience unmatched efficiency with our comprehensive suite of AI-powered tools designed for the complete document lifecycle.
           </p>
         </motion.div>
 
