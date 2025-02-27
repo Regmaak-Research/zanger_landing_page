@@ -18,7 +18,7 @@ export default function Hero() {
                 Transform Your Legal Practice with AI
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground">
-                Experience the power of AI-driven legal excellence. Our enterprise-grade platform saves up to 70% of time across the entire document lifecycle - from creation to signing.
+                Experience the power of AI-driven document management. Our innovative platform saves up to 70% of time across the entire document lifecycle - from creation to signing.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
