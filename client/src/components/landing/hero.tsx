@@ -15,7 +15,7 @@ export default function Hero() {
           >
             <div className="space-y-4 md:space-y-6 text-center lg:text-left">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
-                Transform Your Legal Practice with AI
+                Transform Your Legal Practice with Advanced AI
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground">
                 Experience the power of AI-driven legal excellence. Our enterprise-grade platform saves up to 70% of time across the entire document lifecycle - from creation to signing.
