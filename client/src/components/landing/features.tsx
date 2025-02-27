@@ -12,62 +12,62 @@ import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/com
 
 const features = [
   {
-    title: "Enterprise-Grade Document Creation",
-    description: "Harness the power of advanced AI to generate precise, compliant legal documents in minutes. Built for the modern legal practice.",
+    title: "Advanced Document Creation",
+    description: "Generate precise, professional legal documents in minutes with our AI-powered drafting system.",
     benefits: [
       "Intelligent document automation",
-      "Industry-leading compliance checks",
-      "Advanced template customization"
+      "Industry-standard templates",
+      "Advanced customization options"
     ],
     icon: FileText,
   },
   {
-    title: "Secure Document Sharing & E-Signatures",
-    description: "Bank-level security meets seamless collaboration. Share, track, and sign documents with confidence in a unified platform.",
+    title: "Document Sharing & E-Signatures",
+    description: "Share documents and collect signatures seamlessly in one unified platform.",
     benefits: [
-      "Enterprise-grade encryption",
-      "Compliant e-signatures",
+      "Easy document sharing",
+      "Built-in e-signatures",
       "Real-time collaboration"
     ],
     icon: Scale,
   },
   {
     title: "AI-Powered Legal Research",
-    description: "Transform your research process with intelligent analytics and comprehensive case analysis powered by cutting-edge AI.",
+    description: "Transform your research process with intelligent analytics and comprehensive case analysis.",
     benefits: [
-      "Contextual search intelligence",
+      "Smart search capabilities",
       "Precedent analysis",
       "Real-time legal updates"
     ],
     icon: Search,
   },
   {
-    title: "Smart Document Management",
-    description: "Centralize your document lifecycle with intelligent organization, version control, and automated workflows.",
+    title: "Document Management",
+    description: "Keep your documents organized with intelligent filing and version control.",
     benefits: [
-      "Advanced version control",
-      "Intelligent categorization",
+      "Smart organization",
+      "Version control",
       "Automated workflows"
     ],
     icon: Calendar,
   },
   {
-    title: "Client Collaboration Hub",
-    description: "Elevate client experience with a secure, intuitive portal for document sharing, approvals, and communication.",
+    title: "Client Collaboration",
+    description: "Streamline document sharing and approvals with an intuitive client portal.",
     benefits: [
-      "Secure client portal",
-      "Document approval workflows",
-      "Client communication tools"
+      "Easy file sharing",
+      "Approval workflows",
+      "Communication tools"
     ],
     icon: Users,
   },
   {
-    title: "Enterprise Security & Compliance",
-    description: "Rest assured with SOC 2 compliant infrastructure, advanced encryption, and comprehensive audit trails.",
+    title: "Document Analytics",
+    description: "Track document status, usage patterns, and workflow efficiency.",
     benefits: [
-      "SOC 2 compliance",
-      "End-to-end encryption",
-      "Detailed audit logs"
+      "Usage tracking",
+      "Progress monitoring",
+      "Performance insights"
     ],
     icon: Mail,
   },
@@ -87,7 +87,7 @@ export default function Features() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">Enterprise-Grade Legal Technology</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">Powerful Legal Technology</h2>
           <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto px-4">
             Experience unmatched efficiency with our comprehensive suite of AI-powered tools designed for the complete document lifecycle.
           </p>
