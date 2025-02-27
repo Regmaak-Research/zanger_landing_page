@@ -18,7 +18,7 @@ export default function Hero() {
                 Transform Your Legal Practice with AI
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground">
-                Your all-in-one AI legal platform that saves 70% of time on document preparation and case management.
+                Your all-in-one AI legal platform that saves up to 70% of time on document preparation and case management.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
